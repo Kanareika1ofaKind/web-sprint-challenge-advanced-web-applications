@@ -56,6 +56,7 @@ export default function App() {
           redirectToArticles()
               // to the Articles screen. Don't forget to turn off the spinner!
            setSpinnerOn(false)
+           setMessage(data.message) // "Welcome back" message
       }
       catch (err) {
           setSpinnerOn(false)
@@ -69,7 +70,7 @@ export default function App() {
       setMessage('')
       setSpinnerOn(true)
       // and launch an authenticated request to the proper endpoint.
-      const token = localStorage.getItem('token')
+      const token = localStorage.getItem('token') 
 
       const fetchArticles = async () => {
 
@@ -242,7 +243,7 @@ export default function App() {
           <NavLink id="articlesScreen" to="/articles">Articles</NavLink>
         </nav>
         <Routes>
-                  <Route path="/" element={<LoginForm login={login} />} />
+                  <Route path="/" element={<LoginForm login={login} />} /> 
           <Route path="articles" element={
                       <>
               
